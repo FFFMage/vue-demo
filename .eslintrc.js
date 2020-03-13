@@ -14,5 +14,6 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "space-before-function-paren": 0, // 函数定义时括号前面要不要有空格
+    "camelcase": 0 // 是否开启强制托峰规则
   }
 }

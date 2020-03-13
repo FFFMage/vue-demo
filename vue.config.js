@@ -6,7 +6,19 @@ module.exports = {
         assets: '@/assets',
         components: '@/components',
         views: '@/views',
-        common: '@/common'
+        common: '@/common',
+        network: '@/network'
+      }
+    }
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://www.web-jshtml.cn/productapi',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     }
   }

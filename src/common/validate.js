@@ -28,11 +28,3 @@ export function validatePsd(rule, value, callback) {
     callback()
   }
 }
-
-export function validateCode(rule, value, callback) {
-  if (!value) {
-    return callback(new Error('请输入验证码'))
-  } else {
-    callback()
-  }
-}
