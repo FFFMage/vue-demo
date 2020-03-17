@@ -1,0 +1,30 @@
+{
+  "id": "1691835",
+  "name": "my_project",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13260059",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "123123",
+      "name": "表单",
+      "font_class": "biaodan",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "6308132",
+      "name": "控制台",
+      "font_class": "kongzhitai",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    }
+  ]
+}

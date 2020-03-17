@@ -217,6 +217,12 @@ export default {
         const res = await Login(data)
         console.log(res)
         context.root.$message.success(`${res.message}`)
+        if (res.resCode === 0) {
+          window.sessionStorage.setItem('token', res.data.token)
+          context.root.$router.push('/home')
+        } else {
+          context.root.$message.error(`${res.message}`)
+        }
       } catch (error) {
         console.log(error)
       }
