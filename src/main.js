@@ -9,6 +9,10 @@ import 'assets/css/base.styl'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'assets/font/iconfont.css'
 
+// 导入自定义全局方法
+import global from 'components/common/global.js'
+
+Vue.use(global)
 Vue.use(ElementUI)
 Vue.use(VueCompositionApi)
 

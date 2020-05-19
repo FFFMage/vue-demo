@@ -8,6 +8,8 @@ export function request(config) {
   })
 
   instance.interceptors.request.use(config => {
+    config.headers.Tokey = window.sessionStorage.getItem('token')
+    config.headers.UserName = window.sessionStorage.getItem('username')
     return config
   }, err => {
     console.log(err)

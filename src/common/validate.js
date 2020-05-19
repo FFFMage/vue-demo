@@ -28,3 +28,24 @@ export function validatePsd(rule, value, callback) {
     callback()
   }
 }
+
+// 时间格式化
+export function formatDate(date, fmt) {
+  if (/(y+)/.test(fmt)) { fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length)) }
+
+  const o = {
+    'M+': date.getMonth() + 1,
+    'd+': date.getDate(),
+    'h+': date.getHours(),
+    'm+': date.getMinutes(),
+    's+': date.getSeconds()
+  }
+
+  for (const item in o) {
+    if (new RegExp(`(${item})`).test(fmt)) {
+      const str = o[item] + ''
+      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : str.padStart(2, '0'))
+    }
+  }
+  return fmt
+}

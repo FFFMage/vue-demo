@@ -72,6 +72,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+#home
+  height 100vh
+  .el-container
+    height 100vh
 .el-menu-vertical-demo
   transition all .01s
 .el-aside
@@ -81,10 +85,10 @@ export default {
     border-right none
 .el-main
   background-color rgba(0,0,0,.1)
-  :nth-child(1)
-    width 100%
-    height 100%
+  >:nth-child(1)
     background-color white
+    padding 20px
+    box-sizing border-box
 .el-submenu .el-menu-item
   text-indent 8px
 .el-header

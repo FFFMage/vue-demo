@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie'
 import { validateEmail, validatePsd } from 'common/validate'
 import { reactive, ref, onMounted, isRef, toRefs } from '@vue/composition-api'
 import { GetCode, Register, Login } from 'network/login'
@@ -218,7 +219,11 @@ export default {
         console.log(res)
         context.root.$message.success(`${res.message}`)
         if (res.resCode === 0) {
+          const adminToken = 'admin_token'
           window.sessionStorage.setItem('token', res.data.token)
+          window.sessionStorage.setItem('username', res.data.username)
+          Cookies.set(adminToken, res.data.token)
+          Cookies.set('username', res.data.username)
           context.root.$router.push('/home')
         } else {
           context.root.$message.error(`${res.message}`)
@@ -251,7 +256,7 @@ export default {
 
 <style lang="stylus" scoped>
 #login
-  height 100vh
+  height 100%
   background-color #344a5f
 .login-wrap
   width 330px
